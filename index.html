@@ -2,21 +2,12 @@
 <html lang="sk">
 
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
-
-<title>
-DámTo! – Hlásky a písmená
-</title>
-
+<title>DámTo! – Hlásky a písmená</title>
 
 <style>
-
 *{
   box-sizing:border-box;
 }
@@ -36,13 +27,14 @@ body{
 .wrap{
   max-width:760px;
   margin:auto;
-  padding:8px;
+  padding:5px;
 }
 
 .logo{
   text-align:center;
-  font-size:36px;
+  font-size:30px;
   font-weight:900;
+  line-height:1;
 }
 
 .logo span{
@@ -53,16 +45,16 @@ body{
   text-align:center;
   color:#718096;
   font-weight:700;
-  font-size:13px;
-  margin:3px 0 8px;
+  font-size:11px;
+  margin:2px 0 5px;
 }
 
 .card{
   background:#fff;
-  border-radius:24px;
-  padding:14px;
+  border-radius:20px;
+  padding:10px;
   box-shadow:
-    0 12px 35px
+    0 10px 28px
     rgba(23,54,93,.12);
 }
 
@@ -76,15 +68,15 @@ body{
 
 .levels{
   display:grid;
-  gap:7px;
-  margin:12px 0;
+  gap:5px;
+  margin:8px 0;
 }
 
 button{
   border:0;
-  border-radius:15px;
-  padding:10px;
-  font-size:15px;
+  border-radius:13px;
+  padding:8px;
+  font-size:12px;
   font-weight:800;
   cursor:pointer;
   font-family:Arial,sans-serif;
@@ -114,7 +106,12 @@ button{
 
 .mistakes{
   width:100%;
-  margin-top:7px;
+  margin-top:5px;
+  background:#fff4df;
+  color:#805400;
+}
+
+.allExercises{
   background:#fff4df;
   color:#805400;
 }
@@ -126,6 +123,12 @@ button{
   align-items:center;
 }
 
+.navButtons{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+}
+
 .badge{
   background:#fff4df;
   padding:7px 10px;
@@ -134,11 +137,11 @@ button{
 }
 
 .progress{
-  height:8px;
+  height:6px;
   background:#e9eff5;
   border-radius:20px;
   overflow:hidden;
-  margin:6px 0;
+  margin:5px 0;
 }
 
 .bar{
@@ -148,7 +151,7 @@ button{
 }
 
 .stats{
-  font-size:13px;
+  font-size:12px;
   color:#65758b;
   font-weight:700;
 }
@@ -158,27 +161,27 @@ button{
   color:#65758b;
   font-weight:800;
   font-size:16px;
-  margin-top:7px;
+  margin-top:5px;
 }
 
 .question{
   text-align:center;
-  font-size:30px;
+  font-size:28px;
   font-weight:900;
-  margin:8px 0;
+  margin:6px 0;
   line-height:1.25;
 }
 
 .answers{
   display:grid;
-  gap:6px;
+  gap:5px;
 }
 
 .answer{
   background:#fff;
   border:2px solid #dce7f2;
   color:#17365d;
-  padding:9px;
+  padding:7px;
 }
 
 .answer:hover{
@@ -186,15 +189,21 @@ button{
   background:#f5f9ff;
 }
 
+.answer.keyboardSelected{
+  border-color:#2f80ed;
+  background:#eaf3ff;
+  box-shadow:0 0 0 2px rgba(47,128,237,.12);
+}
+
 .answer:disabled{
   cursor:default;
 }
 
 .feedback{
-  margin-top:6px;
-  padding:7px 9px;
+  margin-top:5px;
+  padding:5px 7px;
   border-radius:12px;
-  font-size:14px;
+  font-size:12px;
 }
 
 .good{
@@ -213,19 +222,16 @@ button{
 }
 
 .score{
-  font-size:48px;
+  font-size:44px;
   font-weight:900;
 }
 
 .footer{
   text-align:center;
   color:#8795a7;
-  font-size:12px;
-  margin-top:5px;
+  font-size:10px;
+  margin-top:3px;
 }
-
-
-/* KOMPAKTNÉ ZOBRAZENIE */
 
 @media(max-height:700px){
 
@@ -243,7 +249,7 @@ button{
   }
 
   .instruction{
-    font-size:14px;
+    font-size:12px;
     margin-top:4px;
   }
 
@@ -270,9 +276,7 @@ button{
   .progress{
     height:6px;
   }
-
 }
-
 
 @media(max-width:520px){
 
@@ -287,374 +291,210 @@ button{
   .question{
     font-size:26px;
   }
-
 }
-
 </style>
-
 </head>
-
 
 <body>
 
 <div class="wrap">
 
-
 <div class="logo">
-
 Dám<span>To!</span>
-
 </div>
-
 
 <div class="slogan">
-
 Každý deň o level vyššie.
-
 </div>
 
+<section id="home" class="card center">
 
-
-<!-- DOMOV -->
-
-<section
-  id="home"
-  class="card center"
->
-
-
-<div style="font-size:40px">
-
+<div style="font-size:34px">
 🔤
-
 </div>
 
-
-<h1 style="margin:5px 0">
-
+<h1 style="margin:4px 0">
 Hlásky a písmená
-
 </h1>
 
-
-<p style="margin:5px 0">
-
+<p style="margin:3px 0">
 Samohlásky, spoluhlásky a dvojhlásky.
-
 </p>
-
-
 
 <div class="levels">
 
-
-<button
-  class="level active"
-  data-level="1"
->
-
+<button class="level active" data-level="1">
 ⭐ Skúšam
-
 <br>
-
-<small>
-Samohláska alebo spoluhláska?
-</small>
-
+<small>Samohláska alebo spoluhláska?</small>
 </button>
 
-
-
-<button
-  class="level"
-  data-level="2"
->
-
+<button class="level" data-level="2">
 ⭐⭐ Už mi to ide
-
 <br>
-
-<small>
-Krátka, dlhá alebo dvojhláska?
-</small>
-
+<small>Krátka, dlhá alebo dvojhláska?</small>
 </button>
 
-
-
-<button
-  class="level"
-  data-level="3"
->
-
+<button class="level" data-level="3">
 ⭐⭐⭐ DámTo!
-
 <br>
-
-<small>
-Hľadaj hlásky v slovách
-</small>
-
+<small>Hľadaj hlásky v slovách</small>
 </button>
-
 
 </div>
 
-
-
-<button
-  id="startBtn"
-  class="primary"
->
-
+<button id="startBtn" class="primary">
 ▶ Začať tréning
-
 </button>
 
-
+<button id="mistakesBtn" class="mistakes">
+🎯 Precvičiť moje chyby
+<span id="mistakeCount"></span>
+</button>
 
 <button
-  id="mistakesBtn"
-  class="mistakes"
->
-
-🎯 Precvičiť moje chyby
-
-<span id="mistakeCount"></span>
-
+id="allExercisesHomeBtn"
+class="allExercises"
+style="width:100%;margin-top:5px">
+🏠 Všetky cvičenia
 </button>
-
 
 </section>
 
-
-
-<!-- HRA -->
-
-<section
-  id="game"
-  class="card hidden"
->
-
+<section id="game" class="card hidden">
 
 <div class="top">
 
+<div class="navButtons">
 
-<button
-  id="backBtn"
-  class="secondary"
->
-
+<button id="backBtn" class="secondary">
 ← Späť
-
 </button>
 
-
-<div
-  id="levelBadge"
-  class="badge"
-></div>
-
+<button id="allExercisesBtn" class="allExercises">
+🏠 Všetky cvičenia
+</button>
 
 </div>
 
+<div id="levelBadge" class="badge"></div>
 
+</div>
 
 <div class="progress">
-
-<div
-  id="bar"
-  class="bar"
-></div>
-
+<div id="bar" class="bar"></div>
 </div>
 
-
-
 <div class="stats">
-
 <span id="counter"></span>
 
 <span>
-
 🏆
-
-<span id="points">
-
-0
-
+<span id="points">0</span>
 </span>
-
-</span>
-
 </div>
 
+<div id="instruction" class="instruction"></div>
 
+<div id="question" class="question"></div>
 
-<div
-  id="instruction"
-  class="instruction"
-></div>
-
-
-
-<div
-  id="question"
-  class="question"
-></div>
-
-
-
-<div
-  id="answers"
-  class="answers"
-></div>
-
-
+<div id="answers" class="answers"></div>
 
 <div id="feedback"></div>
 
-
-
 <button
-  id="nextButton"
-  class="primary hidden"
->
-
+id="nextButton"
+class="primary hidden">
 Ďalej ➜
-
 </button>
-
 
 </section>
 
-
-
-<!-- KONIEC -->
-
-<section
-  id="finish"
-  class="card center hidden"
->
-
+<section id="finish" class="card center hidden">
 
 <div style="font-size:50px">
-
 🏆
-
 </div>
 
-
 <h1>
-
 Tréning hotový!
-
 </h1>
 
-
-<div
-  id="finalScore"
-  class="score"
-></div>
-
+<div id="finalScore" class="score"></div>
 
 <p id="finalMessage"></p>
 
-
-<button
-  id="againBtn"
-  class="primary"
->
-
+<button id="againBtn" class="primary">
 🔄 Nový náhodný mix
-
 </button>
 
+<br>
 
-<br><br>
+<div style="display:flex;gap:5px;justify-content:center;flex-wrap:wrap">
 
-
-<button
-  id="homeBtn"
-  class="secondary"
->
-
+<button id="homeBtn" class="secondary">
 ⭐ Vybrať level
-
 </button>
 
+<button id="allExercisesFinishBtn" class="allExercises">
+🏠 Všetky cvičenia
+</button>
+
+</div>
 
 </section>
 
-
-
 <div class="footer">
-
 DámTo! • Hlásky a písmená
-
 </div>
 
-
 </div>
-
-
 
 <script>
 
-/* =====================================================
+const ALL_EXERCISES_URL =
+"https://sites.google.com/view/vyssilevel/d%C3%A1mto-online-cvi%C4%8Denia";
+
+function goToAllExercises(){
+  window.top.location.href=ALL_EXERCISES_URL;
+}
+
+
+/* =========================================
    LEVEL 1
-   SAMOHLÁSKA ALEBO SPOLUHLÁSKA
-===================================================== */
+========================================= */
 
 const level1=[];
 
-
-/* SAMOHLÁSKY */
-
 const vowelLetters=[
-
 "A","Á","Ä",
 "E","É",
 "I","Í",
 "O","Ó","Ô",
 "U","Ú",
 "Y","Ý"
-
 ];
 
-
 vowelLetters.forEach(
-  (letter,index)=>{
+(letter,index)=>{
 
-    level1.push({
+  level1.push({
+    id:"l1-v-"+index,
+    q:letter,
+    c:"samohláska",
+    o:[
+      "samohláska",
+      "spoluhláska"
+    ]
+  });
 
-      id:
-        "l1-v-"+index,
+});
 
-      q:
-        letter,
-
-      c:
-        "samohláska",
-
-      o:[
-        "samohláska",
-        "spoluhláska"
-      ]
-
-    });
-
-  }
-);
-
-
-/* SPOLUHLÁSKY */
 
 const consonantLetters=[
-
 "B","C","Č",
 "D","Ď",
-F="F",
+"F",
 "G",
 "H",
 "CH",
@@ -669,148 +509,83 @@ F="F",
 "T","Ť",
 "V",
 "Z","Ž"
-
 ];
 
-
 consonantLetters.forEach(
-  (letter,index)=>{
+(letter,index)=>{
 
-    level1.push({
+  level1.push({
+    id:"l1-c-"+index,
+    q:letter,
+    c:"spoluhláska",
+    o:[
+      "samohláska",
+      "spoluhláska"
+    ]
+  });
 
-      id:
-        "l1-c-"+index,
-
-      q:
-        letter,
-
-      c:
-        "spoluhláska",
-
-      o:[
-        "samohláska",
-        "spoluhláska"
-      ]
-
-    });
-
-  }
-);
+});
 
 
-
-/* =====================================================
+/* =========================================
    LEVEL 2
-   KRÁTKE / DLHÉ / DVOJHLÁSKY
-===================================================== */
+========================================= */
 
 const level2=[];
 
-
 const level2Options=[
-
 "krátka samohláska",
 "dlhá samohláska",
 "dvojhláska"
-
 ];
-
-
-/* SAMOSTATNÉ KRÁTKE */
 
 [
 "a","ä","e","i","o","u","y"
-
 ].forEach(
-  (value,index)=>{
+(value,index)=>{
 
-    level2.push({
+  level2.push({
+    id:"l2-short-"+index,
+    i:"Do ktorej skupiny patrí?",
+    q:value,
+    c:"krátka samohláska",
+    o:level2Options
+  });
 
-      id:
-        "l2-short-"+index,
+});
 
-      i:
-        "Do ktorej skupiny patrí?",
-
-      q:
-        value,
-
-      c:
-        "krátka samohláska",
-
-      o:
-        level2Options
-
-    });
-
-  }
-);
-
-
-/* SAMOSTATNÉ DLHÉ */
 
 [
 "á","é","í","ó","ú","ý"
-
 ].forEach(
-  (value,index)=>{
+(value,index)=>{
 
-    level2.push({
+  level2.push({
+    id:"l2-long-"+index,
+    i:"Do ktorej skupiny patrí?",
+    q:value,
+    c:"dlhá samohláska",
+    o:level2Options
+  });
 
-      id:
-        "l2-long-"+index,
+});
 
-      i:
-        "Do ktorej skupiny patrí?",
-
-      q:
-        value,
-
-      c:
-        "dlhá samohláska",
-
-      o:
-        level2Options
-
-    });
-
-  }
-);
-
-
-/* DVOJHLÁSKY */
 
 [
 "ia","ie","iu","ô"
-
 ].forEach(
-  (value,index)=>{
+(value,index)=>{
 
-    level2.push({
+  level2.push({
+    id:"l2-diph-"+index,
+    i:"Do ktorej skupiny patrí?",
+    q:value,
+    c:"dvojhláska",
+    o:level2Options
+  });
 
-      id:
-        "l2-diph-"+index,
+});
 
-      i:
-        "Do ktorej skupiny patrí?",
-
-      q:
-        value,
-
-      c:
-        "dvojhláska",
-
-      o:
-        level2Options
-
-    });
-
-  }
-);
-
-
-
-/* HLÁSKA V SLOVE */
 
 const level2Words=[
 
@@ -896,62 +671,29 @@ c:"dvojhláska"
 id:"lw14",
 q:"p[ia]tok",
 c:"dvojhláska"
-},
-
-{
-id:"lw15",
-q:"cudz[iu]?",
-c:"dvojhláska"
 }
 
 ];
 
+level2Words.forEach(
+x=>{
 
-/*
-  Poslednú problematickú položku
-  nepoužijeme.
-*/
+  level2.push({
+    id:x.id,
+    i:"Aká je hláska v hranatej zátvorke?",
+    q:x.q,
+    c:x.c,
+    o:level2Options
+  });
 
-level2Words
-  .filter(
-    x=>x.id!=="lw15"
-  )
-  .forEach(
-    x=>{
-
-      level2.push({
-
-        id:
-          x.id,
-
-        i:
-          "Aká je hláska v hranatej zátvorke?",
-
-        q:
-          x.q,
-
-        c:
-          x.c,
-
-        o:
-          level2Options
-
-      });
-
-    }
-  );
+});
 
 
-
-/* =====================================================
+/* =========================================
    LEVEL 3
-   PRÁCA SO SLOVAMI
-===================================================== */
+========================================= */
 
 const level3=[
-
-
-/* DVOJHLÁSKY */
 
 {
 id:"l3-01",
@@ -1017,10 +759,6 @@ c:"kôš",
 o:["kôš","dom","les"]
 },
 
-
-
-/* DLHÁ SAMOHLÁSKA */
-
 {
 id:"l3-09",
 i:"Ktoré slovo má dlhú samohlásku?",
@@ -1084,10 +822,6 @@ q:"",
 c:"žltý",
 o:["žltý","žaba","pero"]
 },
-
-
-
-/* POČET SAMOHLÁSOK */
 
 {
 id:"l3-17",
@@ -1185,10 +919,6 @@ c:"2",
 o:["1","2","3"]
 },
 
-
-
-/* KTORÉ SLOVO MÁ VIAC SAMOHLÁSOK */
-
 {
 id:"l3-29",
 i:"Ktoré slovo má tri samohlásky?",
@@ -1236,10 +966,6 @@ q:"",
 c:"banán",
 o:["banán","dom","koleno"]
 },
-
-
-
-/* SAMOHLÁSKA / SPOLUHLÁSKA V SLOVE */
 
 {
 id:"l3-35",
@@ -1292,134 +1018,87 @@ o:["strom","vlak","pero"]
 ];
 
 
-
-/* =====================================================
+/* =========================================
    PREMENNÉ
-===================================================== */
+========================================= */
 
 let selectedLevel=1;
-
 let questions=[];
-
 let current=0;
-
 let score=0;
-
 let locked=false;
-
+let selectedAnswerIndex=0;
 
 const $=
-  id=>
-    document.getElementById(id);
+id=>document.getElementById(id);
 
 
-
-/* =====================================================
+/* =========================================
    NÁHODNÉ PORADIE
-===================================================== */
+========================================= */
 
 function shuffle(array){
 
-  const a=[
-    ...array
-  ];
+  const a=[...array];
 
-
-  for(
-    let i=a.length-1;
-    i>0;
-    i--
-  ){
+  for(let i=a.length-1;i>0;i--){
 
     const j=
-      Math.floor(
-        Math.random()*(i+1)
-      );
+    Math.floor(
+      Math.random()*(i+1)
+    );
 
-
-    [
-      a[i],
-      a[j]
-    ]=[
-      a[j],
-      a[i]
-    ];
-
+    [a[i],a[j]]=
+    [a[j],a[i]];
   }
 
-
   return a;
-
 }
 
 
-
-/* =====================================================
-   ZDROJ OTÁZOK
-===================================================== */
+/* =========================================
+   ZDROJ
+========================================= */
 
 function source(){
 
-  if(
-    selectedLevel===1
-  ){
-
+  if(selectedLevel===1){
     return level1;
-
   }
 
-
-  if(
-    selectedLevel===2
-  ){
-
+  if(selectedLevel===2){
     return level2;
-
   }
-
 
   return level3;
-
 }
 
 
-
-/* =====================================================
+/* =========================================
    OBRAZOVKY
-===================================================== */
+========================================= */
 
 function show(id){
 
-  [
-    "home",
-    "game",
-    "finish"
-  ]
+  ["home","game","finish"]
   .forEach(
-    name=>
-      $(name)
-        .classList
-        .add("hidden")
+  name=>
+    $(name)
+    .classList
+    .add("hidden")
   );
-
 
   $(id)
-    .classList
-    .remove("hidden");
+  .classList
+  .remove("hidden");
 
-
-  window.scrollTo(
-    0,
-    0
-  );
-
+  window.scrollTo(0,0);
 }
 
 
-
-/* =====================================================
+/* =========================================
    CHYBY
-===================================================== */
+========================================= */
 
 function getMistakes(){
 
@@ -1432,15 +1111,12 @@ function getMistakes(){
     );
 
   }
-
   catch(error){
 
     return {};
 
   }
-
 }
-
 
 
 function setMistakes(data){
@@ -1450,11 +1126,8 @@ function setMistakes(data){
     JSON.stringify(data)
   );
 
-
   updateMistakeCount();
-
 }
-
 
 
 function updateMistakeCount(){
@@ -1464,599 +1137,566 @@ function updateMistakeCount(){
       getMistakes()
     ).length;
 
-
   $("mistakeCount")
-    .textContent=
-      " ("+
-      number+
-      ")";
-
+  .textContent=
+    " ("+number+")";
 }
 
 
-
-/* =====================================================
-   VÝBER LEVELU
-===================================================== */
+/* =========================================
+   LEVEL
+========================================= */
 
 document
-  .querySelectorAll(
-    ".level"
-  )
-  .forEach(
-    button=>{
+.querySelectorAll(".level")
+.forEach(
+button=>{
 
-      button.addEventListener(
-        "click",
-        ()=>{
+  button.addEventListener(
+  "click",
+  ()=>{
 
-          selectedLevel=
-            Number(
-              button.dataset.level
-            );
-
-
-          document
-            .querySelectorAll(
-              ".level"
-            )
-            .forEach(
-              item=>
-                item.classList
-                .remove("active")
-            );
-
-
-          button
-            .classList
-            .add("active");
-
-        }
+    selectedLevel=
+      Number(
+        button.dataset.level
       );
 
-    }
-  );
+    document
+    .querySelectorAll(".level")
+    .forEach(
+    item=>
+      item.classList
+      .remove("active")
+    );
+
+    button
+    .classList
+    .add("active");
+
+  });
+});
 
 
-
-/* =====================================================
+/* =========================================
    TLAČIDLÁ
-===================================================== */
+========================================= */
 
 $("startBtn")
-  .addEventListener(
-    "click",
-    startTraining
-  );
-
+.addEventListener(
+"click",
+startTraining
+);
 
 $("mistakesBtn")
-  .addEventListener(
-    "click",
-    startMistakeTraining
-  );
-
+.addEventListener(
+"click",
+startMistakeTraining
+);
 
 $("backBtn")
-  .addEventListener(
-    "click",
-    ()=>show("home")
-  );
-
+.addEventListener(
+"click",
+()=>show("home")
+);
 
 $("homeBtn")
-  .addEventListener(
-    "click",
-    ()=>show("home")
-  );
-
+.addEventListener(
+"click",
+()=>show("home")
+);
 
 $("againBtn")
-  .addEventListener(
-    "click",
-    startTraining
-  );
-
+.addEventListener(
+"click",
+startTraining
+);
 
 $("nextButton")
-  .addEventListener(
-    "click",
-    nextQuestion
-  );
+.addEventListener(
+"click",
+nextQuestion
+);
+
+$("allExercisesHomeBtn")
+.addEventListener(
+"click",
+goToAllExercises
+);
+
+$("allExercisesBtn")
+.addEventListener(
+"click",
+goToAllExercises
+);
+
+$("allExercisesFinishBtn")
+.addEventListener(
+"click",
+goToAllExercises
+);
 
 
-
-/* =====================================================
-   ZAČIATOK TRÉNINGU
-===================================================== */
+/* =========================================
+   TRÉNING
+========================================= */
 
 function startTraining(){
 
   const mistakes=
     getMistakes();
 
-
   const list=
     source();
-
 
   questions=[
 
     ...shuffle(
       list.filter(
-        x=>
-          mistakes[x.id]
+      x=>
+        mistakes[x.id]
       )
     ),
 
     ...shuffle(
       list.filter(
-        x=>
-          !mistakes[x.id]
+      x=>
+        !mistakes[x.id]
       )
     )
 
-  ]
-  .slice(
-    0,
-    10
-  );
-
+  ].slice(0,10);
 
   current=0;
-
   score=0;
 
-
-  show(
-    "game"
-  );
-
+  show("game");
 
   render();
-
 }
 
 
-
-/* =====================================================
-   PRECVIČOVANIE CHÝB
-===================================================== */
+/* =========================================
+   MOJE CHYBY
+========================================= */
 
 function startMistakeTraining(){
 
   const mistakes=
     getMistakes();
 
-
   const all=[
-
     ...level1,
     ...level2,
     ...level3
-
   ]
   .filter(
-    x=>
-      mistakes[x.id]
+  x=>
+    mistakes[x.id]
   );
 
-
-  if(
-    !all.length
-  ){
+  if(!all.length){
 
     alert(
       "🎉 Nemáš žiadne chyby na precvičenie."
     );
 
     return;
-
   }
 
-
   questions=
-    shuffle(
-      all
-    )
-    .slice(
-      0,
-      10
-    );
-
+    shuffle(all)
+    .slice(0,10);
 
   current=0;
-
   score=0;
 
-
-  show(
-    "game"
-  );
-
+  show("game");
 
   render();
-
 }
 
 
-
-/* =====================================================
-   ZOBRAZENIE OTÁZKY
-===================================================== */
+/* =========================================
+   OTÁZKA
+========================================= */
 
 function render(){
 
   locked=false;
+  selectedAnswerIndex=0;
 
-
-  if(
-    current>=questions.length
-  ){
+  if(current>=questions.length){
 
     finish();
-
     return;
-
   }
-
 
   const x=
     questions[current];
 
-
   $("counter")
-    .textContent=
-      (current+1)
-      +" / "+
-      questions.length;
-
+  .textContent=
+    (current+1)+
+    " / "+
+    questions.length;
 
   $("points")
-    .textContent=
-      score;
-
+  .textContent=
+    score;
 
   $("bar")
-    .style.width=
-      (
-        current /
-        questions.length *
-        100
-      )+"%";
-
+  .style.width=
+    (
+      current /
+      questions.length *
+      100
+    )+"%";
 
   $("levelBadge")
-    .textContent=
+  .textContent=
 
-      selectedLevel===1
+    selectedLevel===1
+    ? "⭐ Skúšam"
 
-      ? "⭐ Skúšam"
+    : selectedLevel===2
+    ? "⭐⭐ Už mi to ide"
 
-      : selectedLevel===2
-
-      ? "⭐⭐ Už mi to ide"
-
-      : "⭐⭐⭐ DámTo!";
-
+    : "⭐⭐⭐ DámTo!";
 
   $("instruction")
-    .textContent=
+  .textContent=
 
-      x.i ||
+    x.i ||
 
-      (
-        selectedLevel===1
+    (
+      selectedLevel===1
 
-        ? "Je to samohláska alebo spoluhláska?"
+      ? "Je to samohláska alebo spoluhláska?"
 
-        : "Do ktorej skupiny patrí?"
-      );
-
+      : "Do ktorej skupiny patrí?"
+    );
 
   $("question")
-    .textContent=
-      x.q;
-
-
-  $("feedback")
-    .innerHTML="";
-
+  .textContent=
+    x.q;
 
   $("feedback")
-    .className="";
+  .innerHTML="";
 
+  $("feedback")
+  .className="";
 
   $("nextButton")
-    .classList
-    .add("hidden");
-
+  .classList
+  .add("hidden");
 
   const box=
     $("answers");
 
-
   box.innerHTML="";
 
+  const mixed=
+    shuffle(x.o);
 
-  shuffle(
-    x.o
-  )
-  .forEach(
-    option=>{
+  mixed.forEach(
+  (option,index)=>{
 
-      const button=
-        document
-          .createElement(
-            "button"
-          );
+    const button=
+      document
+      .createElement("button");
 
+    button.className=
+      "answer";
 
-      button.className=
-        "answer";
+    button.textContent=
+      option;
 
+    button.addEventListener(
+    "click",
+    ()=>{
 
-      button.textContent=
-        option;
+      selectedAnswerIndex=
+        index;
 
+      updateKeyboardSelection();
 
-      button.addEventListener(
-        "click",
-        ()=>{
-
-          checkAnswer(
-            option===x.c
-          );
-
-        }
+      checkAnswer(
+        option===x.c
       );
 
+    });
 
-      box.appendChild(
-        button
-      );
+    box.appendChild(
+      button
+    );
+  });
 
-    }
-  );
-
+  updateKeyboardSelection();
 }
 
 
+/* =========================================
+   KLÁVESNICOVÝ VÝBER
+========================================= */
 
-/* =====================================================
-   KONTROLA ODPOVEDE
-===================================================== */
+function updateKeyboardSelection(){
+
+  const buttons=[
+    ...document
+    .querySelectorAll(".answer")
+  ];
+
+  buttons.forEach(
+  (button,index)=>{
+
+    button.classList.toggle(
+      "keyboardSelected",
+      index===selectedAnswerIndex &&
+      !button.disabled
+    );
+
+  });
+}
+
+
+/* =========================================
+   KONTROLA
+========================================= */
 
 function checkAnswer(ok){
 
-  if(
-    locked
-  ){
-
+  if(locked){
     return;
-
   }
 
-
   locked=true;
-
 
   const x=
     questions[current];
 
-
   const mistakes=
     getMistakes();
-
 
   const feedback=
     $("feedback");
 
-
-  if(
-    ok
-  ){
+  if(ok){
 
     score++;
 
-
-    /*
-      Ak bola úloha uložená
-      medzi chybami,
-      po správnom vyriešení zmizne.
-    */
-
     delete mistakes[x.id];
-
 
     feedback.className=
       "feedback good";
-
 
     feedback.innerHTML=
       "🎉 <b>Výborne!</b> Správna odpoveď.";
 
   }
-
-
   else{
 
-
-    /*
-      Rovnaká chyba sa
-      nepočíta viackrát.
-    */
-
     mistakes[x.id]=true;
-
 
     feedback.className=
       "feedback bad";
 
-
     feedback.innerHTML=
-      "❌ <b>Nesprávne.</b> Správna odpoveď je <b>"
-      +x.c+
+      "❌ <b>Nesprávne.</b> Správna odpoveď je <b>"+
+      x.c+
       "</b>.";
-
   }
-
 
   setMistakes(
     mistakes
   );
 
-
   $("points")
-    .textContent=
-      score;
-
+  .textContent=
+    score;
 
   document
-    .querySelectorAll(
-      ".answer"
-    )
-    .forEach(
-      button=>
-        button.disabled=true
-    );
-
+  .querySelectorAll(".answer")
+  .forEach(
+  button=>
+    button.disabled=true
+  );
 
   $("nextButton")
-    .classList
-    .remove("hidden");
-
+  .classList
+  .remove("hidden");
 }
 
 
-
-/* =====================================================
-   ĎALŠIA OTÁZKA
-===================================================== */
+/* =========================================
+   ĎALEJ
+========================================= */
 
 function nextQuestion(){
 
   current++;
 
-
   render();
 
-
-  window.scrollTo(
-    0,
-    0
-  );
-
+  window.scrollTo(0,0);
 }
 
 
-
-/* =====================================================
-   ENTER = ĎALEJ
-===================================================== */
+/* =========================================
+   ŠÍPKY + ENTER
+========================================= */
 
 document
-  .addEventListener(
-    "keydown",
-    event=>{
+.addEventListener(
+"keydown",
+event=>{
 
-      if(
+  if(
+    $("game")
+    .classList
+    .contains("hidden")
+  ){
+    return;
+  }
 
-        event.key==="Enter" &&
+  const buttons=[
+    ...document
+    .querySelectorAll(".answer")
+  ];
 
-        !$("game")
-          .classList
-          .contains("hidden") &&
+  if(
+    locked &&
+    event.key==="Enter"
+  ){
 
-        !$("nextButton")
-          .classList
-          .contains("hidden")
+    event.preventDefault();
 
-      ){
+    nextQuestion();
 
-        event.preventDefault();
+    return;
+  }
 
+  if(
+    locked ||
+    !buttons.length
+  ){
+    return;
+  }
 
-        nextQuestion();
+  if(
+    event.key==="ArrowRight" ||
+    event.key==="ArrowDown"
+  ){
 
-      }
+    event.preventDefault();
 
+    selectedAnswerIndex=
+      (
+        selectedAnswerIndex+1
+      )%
+      buttons.length;
+
+    updateKeyboardSelection();
+
+    return;
+  }
+
+  if(
+    event.key==="ArrowLeft" ||
+    event.key==="ArrowUp"
+  ){
+
+    event.preventDefault();
+
+    selectedAnswerIndex=
+      (
+        selectedAnswerIndex-1+
+        buttons.length
+      )%
+      buttons.length;
+
+    updateKeyboardSelection();
+
+    return;
+  }
+
+  if(event.key==="Enter"){
+
+    event.preventDefault();
+
+    const selected=
+      buttons[
+        selectedAnswerIndex
+      ];
+
+    if(
+      selected &&
+      !selected.disabled
+    ){
+
+      selected.click();
     }
-  );
+  }
+
+});
 
 
-
-/* =====================================================
+/* =========================================
    KONIEC
-===================================================== */
+========================================= */
 
 function finish(){
 
   $("finalScore")
-    .textContent=
-      score+
-      " / "+
-      questions.length;
-
+  .textContent=
+    score+
+    " / "+
+    questions.length;
 
   const percent=
     questions.length
-
-    ? score /
-      questions.length
-
+    ? score/questions.length
     : 0;
-
 
   const remaining=
     Object.keys(
       getMistakes()
     ).length;
 
-
   $("finalMessage")
-    .textContent=
+  .textContent=
 
-      remaining===0 &&
-      questions.length>0
+    remaining===0 &&
+    questions.length>0
 
-      ? "🎉 Výborne! Všetky uložené chyby sú opravené."
+    ? "🎉 Výborne! Všetky uložené chyby sú opravené."
 
-      : percent===1
+    : percent===1
 
-      ? "Perfektné! Bez chyby. 🌟"
+    ? "Perfektné! Bez chyby. 🌟"
 
-      : percent>=0.8
+    : percent>=0.8
 
-      ? "Výborne! 🚀"
+    ? "Výborne! 🚀"
 
-      : percent>=0.6
+    : percent>=0.6
 
-      ? "Pekná práca. 💪"
+    ? "Pekná práca. 💪"
 
-      : "Skús ešte jeden tréning. 🌱";
-
+    : "Skús ešte jeden tréning. 🌱";
 
   updateMistakeCount();
 
-
-  show(
-    "finish"
-  );
-
+  show("finish");
 }
 
 
-
-/* =====================================================
+/* =========================================
    ŠTART
-===================================================== */
+========================================= */
 
 updateMistakeCount();
-
 
 </script>
 
 </body>
-
 </html>
